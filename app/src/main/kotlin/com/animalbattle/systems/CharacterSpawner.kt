@@ -5,6 +5,7 @@ import com.animalbattle.core.GameState
 import com.animalbattle.entities.AnimalCharacter
 import com.animalbattle.entities.CharacterType
 import com.animalbattle.entities.Position
+import kotlin.random.Random
 
 /**
  * 玩家角色召唤系统 - Player character summoning system
@@ -19,7 +20,7 @@ class CharacterSpawner(
         }
         
         if (moneyManager.spend(type.cost)) {
-            val spawnY = GameConstants.BASE_Y + (Math.random() * 200 - 100).toFloat()
+            val spawnY = GameConstants.BASE_Y + (Random.nextFloat() * 200 - 100)
             val character = AnimalCharacter(
                 type = type,
                 isEnemy = false,

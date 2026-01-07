@@ -5,6 +5,7 @@ import com.animalbattle.core.GameState
 import com.animalbattle.entities.AnimalCharacter
 import com.animalbattle.entities.CharacterType
 import com.animalbattle.entities.Position
+import kotlin.random.Random
 
 /**
  * 敌人自动生成系统 - Enemy auto-generation
@@ -32,7 +33,7 @@ class EnemyWaveManager(private val gameState: GameState) {
     
     private fun spawnEnemy() {
         val type = CharacterType.random()
-        val spawnY = GameConstants.BASE_Y + (Math.random() * 200 - 100).toFloat()
+        val spawnY = GameConstants.BASE_Y + (Random.nextFloat() * 200 - 100)
         
         val enemy = AnimalCharacter(
             type = type,

@@ -23,8 +23,8 @@ object GameConstants {
     const val BASE_Y = GAME_HEIGHT / 2f
     
     // 敌人生成
-    const val ENEMY_SPAWN_INTERVAL = 3f // 秒
-    const val DIFFICULTY_INCREASE_INTERVAL = 30f // 秒
+    const val ENEMY_SPAWN_INTERVAL = 3f // 秒 - Enemy spawn every 3 seconds
+    const val DIFFICULTY_INCREASE_INTERVAL = 30f // 秒 - Difficulty increases every 30 seconds
     
     // UI位置
     const val BUTTON_WIDTH = 180f
@@ -33,7 +33,9 @@ object GameConstants {
     const val BUTTON_SPACING = 200f
     const val BUTTON_START_X = 400f
     
-    // 战斗系统
-    const val RANGE_TO_PIXEL_MULTIPLIER = 50f // 射程转换为像素的倍数
-    const val MOVEMENT_SPEED_MULTIPLIER = 50f // 速度转换为像素/秒的倍数
+    // 战斗系统 - Combat system conversion factors
+    // 射程和速度使用抽象单位，需要转换为像素
+    // Range and speed use abstract units, need to convert to pixels
+    const val RANGE_TO_PIXEL_MULTIPLIER = 50f // 1 range unit = 50 pixels
+    const val MOVEMENT_SPEED_MULTIPLIER = 50f // 1 speed unit = 50 pixels per second
 }
