@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 动物大作战 - 应用名称和文本资源 -->
+    <string name="app_name">动物大作战</string>
+    
+    <!-- 主菜单 -->
+    <string name="start_game">开始游戏</string>
+    <string name="game_settings">游戏设置</string>
+    <string name="how_to_play">玩法说明</string>
+    <string name="exit_game">退出游戏</string>
+    
+    <!-- 游戏界面 -->
+    <string name="score">得分: %d</string>
+    <string name="level">关卡: %d</string>
+    <string name="lives">生命: %d</string>
+    <string name="pause">暂停</string>
+    <string name="resume">继续</string>
+    <string name="game_over">游戏结束</string>
+    <string name="victory">胜利！</string>
+    
+    <!-- 角色相关 -->
+    <string name="cat_warrior">喵星战士</string>
+    <string name="cat_mage">喵星法师</string>
+    <string name="cat_archer">喵星弓手</string>
+    <string name="cat_tank">喵星坦克</string>
+    
+    <!-- 技能系统 -->
+    <string name="skill_meow_attack">喵喵攻击</string>
+    <string name="skill_nine_lives">九命神功</string>
+    <string name="skill_catnip_rage">猫薄荷狂暴</string>
+    <string name="skill_fish_heal">鱼肉回复</string>
+</resources>
