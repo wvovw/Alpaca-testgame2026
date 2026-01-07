@@ -17,7 +17,7 @@ class BattleArena(private val gameState: GameState) {
             for (enemy in gameState.enemyCharacters) {
                 if (!enemy.isAlive()) continue
                 val distance = player.position.distanceTo(enemy.position)
-                if (distance <= player.range * 50) { // 转换为像素距离
+                if (distance <= player.range * GameConstants.RANGE_TO_PIXEL_MULTIPLIER) {
                     hasTargetInRange = true
                     break
                 }
@@ -25,7 +25,7 @@ class BattleArena(private val gameState: GameState) {
             
             // 如果没有目标在范围内，继续向左移动
             if (!hasTargetInRange) {
-                player.position.x -= player.speed * deltaTime * 50
+                player.position.x -= player.speed * deltaTime * GameConstants.MOVEMENT_SPEED_MULTIPLIER
                 
                 // 检查是否到达敌人基地
                 if (player.position.x <= GameConstants.ENEMY_BASE_X + 50) {

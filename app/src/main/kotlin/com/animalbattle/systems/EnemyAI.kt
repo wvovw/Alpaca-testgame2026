@@ -17,7 +17,7 @@ class EnemyAI(private val gameState: GameState) {
             for (player in gameState.playerCharacters) {
                 if (!player.isAlive()) continue
                 val distance = enemy.position.distanceTo(player.position)
-                if (distance <= enemy.range * 50) { // 转换为像素距离
+                if (distance <= enemy.range * GameConstants.RANGE_TO_PIXEL_MULTIPLIER) {
                     hasTargetInRange = true
                     break
                 }
@@ -25,7 +25,7 @@ class EnemyAI(private val gameState: GameState) {
             
             // 如果没有目标在范围内，继续向右移动
             if (!hasTargetInRange) {
-                enemy.position.x += enemy.speed * deltaTime * 50
+                enemy.position.x += enemy.speed * deltaTime * GameConstants.MOVEMENT_SPEED_MULTIPLIER
                 
                 // 检查是否到达玩家基地
                 if (enemy.position.x >= GameConstants.PLAYER_BASE_X - 50) {

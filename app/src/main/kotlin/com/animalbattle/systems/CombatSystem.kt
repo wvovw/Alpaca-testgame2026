@@ -22,7 +22,7 @@ class CombatSystem(
             for (enemy in gameState.enemyCharacters) {
                 if (!enemy.isAlive()) continue
                 val distance = player.position.distanceTo(enemy.position)
-                if (distance <= player.range * 50 && distance < minDistance) {
+                if (distance <= player.range * GameConstants.RANGE_TO_PIXEL_MULTIPLIER && distance < minDistance) {
                     targetEnemy = enemy
                     minDistance = distance
                 }
@@ -36,7 +36,7 @@ class CombatSystem(
             } else {
                 // 检查是否到达敌人基地
                 val distanceToBase = player.position.distanceTo(gameState.enemyBase.position)
-                if (distanceToBase <= player.range * 50) {
+                if (distanceToBase <= player.range * GameConstants.RANGE_TO_PIXEL_MULTIPLIER) {
                     gameState.enemyBase.takeDamage(player.attack)
                     player.performAttack()
                 }
@@ -54,7 +54,7 @@ class CombatSystem(
             for (player in gameState.playerCharacters) {
                 if (!player.isAlive()) continue
                 val distance = enemy.position.distanceTo(player.position)
-                if (distance <= enemy.range * 50 && distance < minDistance) {
+                if (distance <= enemy.range * GameConstants.RANGE_TO_PIXEL_MULTIPLIER && distance < minDistance) {
                     targetPlayer = player
                     minDistance = distance
                 }
@@ -68,7 +68,7 @@ class CombatSystem(
             } else {
                 // 检查是否到达玩家基地
                 val distanceToBase = enemy.position.distanceTo(gameState.playerBase.position)
-                if (distanceToBase <= enemy.range * 50) {
+                if (distanceToBase <= enemy.range * GameConstants.RANGE_TO_PIXEL_MULTIPLIER) {
                     gameState.playerBase.takeDamage(enemy.attack)
                     enemy.performAttack()
                 }

@@ -32,4 +32,8 @@ object GameConstants {
     const val BUTTON_Y = GAME_HEIGHT - 120f
     const val BUTTON_SPACING = 200f
     const val BUTTON_START_X = 400f
+    
+    // 战斗系统
+    const val RANGE_TO_PIXEL_MULTIPLIER = 50f // 射程转换为像素的倍数
+    const val MOVEMENT_SPEED_MULTIPLIER = 50f // 速度转换为像素/秒的倍数
 }

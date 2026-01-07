@@ -1,5 +1,7 @@
 package com.animalbattle.entities
 
+import kotlin.random.Random
+
 /**
  * 动物角色基类 - Animal character base class
  */
@@ -9,7 +11,11 @@ class AnimalCharacter(
     val position: Position,
     var hp: Int = type.maxHp
 ) {
-    val id: Long = System.nanoTime() + (Math.random() * 1000000).toLong()
+    companion object {
+        private const val ID_RANDOM_RANGE = 1000000
+    }
+    
+    val id: Long = System.nanoTime() + Random.nextInt(ID_RANDOM_RANGE)
     private var attackCooldown: Float = 0f
     private val attackSpeed: Float = 1f // 每秒攻击1次
     
@@ -32,9 +38,12 @@ class AnimalCharacter(
         attackCooldown = 1f / attackSpeed
     }
     
+    /**
+     * 受到伤害（伤害已经是计算后的实际伤害）
+     * Takes damage (damage is already the calculated actual damage)
+     */
     fun takeDamage(damage: Int) {
-        val actualDamage = maxOf(1, damage - defense)
-        hp = maxOf(0, hp - actualDamage)
+        hp = maxOf(0, hp - damage)
     }
     
     fun isAlive(): Boolean = hp > 0
