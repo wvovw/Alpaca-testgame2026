@@ -42,7 +42,7 @@ class EnemyWaveManager(private val gameState: GameState) {
         )
         
         // 根据难度等级增强敌人
-        enemy.hp = (enemy.hp * (1 + (difficultyLevel - 1) * 0.1f)).toInt()
+        enemy.hp = (enemy.hp * (1 + (difficultyLevel - 1) * GameConstants.DIFFICULTY_HP_MULTIPLIER)).toInt()
         
         gameState.enemyCharacters.add(enemy)
     }

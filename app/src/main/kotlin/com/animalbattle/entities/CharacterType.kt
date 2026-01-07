@@ -20,6 +20,7 @@ enum class CharacterType(
     RABBIT_MAGE("兔法师", "🐰", 80, 14, 1, 40, 3f, 4f);
 
     companion object {
-        fun random(): CharacterType = values().random()
+        private val VALUES = values() // Cache to avoid repeated array allocation
+        fun random(): CharacterType = VALUES.random()
     }
 }

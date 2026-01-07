@@ -26,6 +26,9 @@ object GameConstants {
     const val ENEMY_SPAWN_INTERVAL = 3f // 秒 - Enemy spawn every 3 seconds
     const val DIFFICULTY_INCREASE_INTERVAL = 30f // 秒 - Difficulty increases every 30 seconds
     
+    // 难度系统
+    const val DIFFICULTY_HP_MULTIPLIER = 0.1f // 难度等级HP增长倍数 (每级+10%)
+    
     // UI位置
     const val BUTTON_WIDTH = 180f
     const val BUTTON_HEIGHT = 100f

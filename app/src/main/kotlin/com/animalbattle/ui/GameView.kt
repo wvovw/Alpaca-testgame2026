@@ -43,6 +43,7 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback 
                 gameThread?.join()
                 retry = false
             } catch (e: InterruptedException) {
+                Thread.currentThread().interrupt() // Preserve interrupted status
                 e.printStackTrace()
             }
         }
