@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">动物大作战</string>
+    <string name="money_label">金钱:</string>
+    <string name="player_base_label">玩家基地</string>
+    <string name="enemy_base_label">敌方基地</string>
+    <string name="game_over_win">胜利!</string>
+    <string name="game_over_lose">失败!</string>
+    <string name="cat_warrior">🐱 猫战士 (50)</string>
+    <string name="dog_guardian">🐶 狗守卫 (75)</string>
+    <string name="eagle_archer">🦅 鹰弓手 (60)</string>
+    <string name="turtle_tank">🐢 龟坦克 (100)</string>
+    <string name="rabbit_mage">🐰 兔法师 (80)</string>
+</resources>
